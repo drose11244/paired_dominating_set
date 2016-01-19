@@ -18,7 +18,7 @@
 
 @article{lamport3,
 	author = "C.-C. Lin, H.-L. Tu",
-	title = "Linear-Time Algorithms for the Paired-Domination Problem in Interval Graphs and Circular-Arc Graphs",
+	title = "Linear-Time Algorithms for the Paired-Domination Problem in Interval Graphs and Circular-Arc Graphs,",
 	booktitle = "Theoretical Computer Science",
 	year = "2014",
 }
