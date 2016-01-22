@@ -17,13 +17,16 @@
 \maketitle
 
 \section{Introduction}
-A graph is an ordered pair $G=(V,E)$ consisting of a finite nonempty set $V$ of vertices and a set $E$ of edges, where each edge is an unordered pair of vertices. A dominating set of a graph $G=(V,E)$ is a set $D \subseteq V$ such that each vertex not in $D$ has at least one neighbor in $D$. A paired-dominating set is a dominating set whose induced subgraph contains at least one perfect matching \cite{lamport1}.
+A graph is an ordered pair $G=(V,E)$ consisting of a finite nonempty set $V$ of vertices and a set $E$ of edges, where each edge is an unordered pair of vertices. A dominating set of a graph $G=(V,E)$ is a set $D \subseteq V$ such that each vertex not in $D$ has at least one neighbor in $D$. A paired-dominating set is a dominating set whose induced subgraph contains at least one perfect matching~\cite{1}.
 
 
-Raz and Safra prove that the dominating set problem has no polynomial-time $c \log|V|$-approximation algorithms for some $c > 0$ unless P = NP \cite{lamport2}.
+Raz and Safra prove that the dominating set problem has no polynomial-time $(c \log|V|)$-approximation algorithms for some $c > 0$ unless $\text{P}=\text{NP}$~\cite{2}, Lin and Tu design an $O(E+V)$-time algorithm for interval graphs and an $O(E(E+V))$-time algorithm for circular-arc graphs~\cite {3}.
 
-Lin and Tu design an $O(m+n)$-time algorithm for interval graphs and an $O(m(m+n))$-time algorithm for circular-arc graphs \cite {lamport3}.
-%m指邊數|E|，n指點數|V|，所以O(|V|+|E|) time，這樣就是linear time
+1.minimum paired dominating set problem的近似演算法
+
+2.minimum paired dominating set size的nontrivial bounds 
+
+
 
 
 \bibliographystyle{plain}
