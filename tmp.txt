@@ -1,0 +1,20 @@
+我們還需要交代我們想解決什麼問題，我想到兩個：（一）給出minimum paired dominating set problem的近似演算法，
+：
+大宇 :老師大大，我將問題切割一下，
+請老師指教看我下面的理解是否有誤？
+minimum
+ 就是指最少的
+paired dominating set
+ 就是做dominating set ，只是最後結果必須是一對的,，也就是必須剛好是偶數，,這樣才符合paired dominating set。
+近似演算法是什麼？? 
+ 所謂的"近似"，就是指結果不一定是最優的，,但結果也可以在接受的範圍,，而且可以比精確演算法消耗的資源還要少。--wiki &個人理解
+
+ 有"近似"就有"精確"演算法，,精確演算法就是指說用的資源是最少的，,效果也是最好的。--個人理解
+
+那怎麼算paired dominating set 的近似演算法呢？
+ wiki上說算近似演算法,常用的方法是用Greedy algorithm
+ 所以說我是去找一個圖,，然後套Greedy algorithm 用法算出最佳解，,然後再用找出近似.
+例如:：這個Graph他做了3次的Greedy，然後他得到minimum dominating set :2,，所以我的近似演算法就是改善(造)Greedy,，也許只要做2次就可以,，然後minimum dominating set :不一定要等於2，但不可以差太多。我是要這樣證明嗎?？我不是很確定，求救大大
+
+（二）給出minimum paired dominating set size的nontrivial bounds ^_^
+先解決上面的：)
