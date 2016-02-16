@@ -6,10 +6,8 @@
 \usepackage{algorithmic}
 \usepackage{enumerate}
 
-
-
 %Gummi|065|=)
-\title{\textbf{XXXX}}
+\title{An algorithm to be analyzed}
 %\author{Alexander van der Mey \and 
 %		Wei-Ning Huang \and
 %		Dion Timmermann}
@@ -18,16 +16,18 @@
 \begin{document}
 
 \maketitle
+
 \newtheorem{lemma}{Lemma}
 
-\section{Introduction}
-A graph is an ordered pair $G=(V,E)$ consisting of a finite nonempty set $V$ of vertices and a set $E$ of edges, where each edge is an unordered pair of vertices. A dominating set of $G=(V,E)$ is a set $D \subseteq V$ such that each vertex not in $D$ has at least one neighbor in $D$. A paired-dominating set is a dominating set whose induced subgraph contains at least one perfect matching~\cite{1}.
-
-Raz and Safra prove that the dominating set problem has no polynomial-time $(c \log|V|)$-approximation algorithms for some $c \textgreater  0$ unless $\text{P}=\text{NP}$~\cite{2}.
-Lin and Tu design an $O(|E|+|V|)$-time algorithm for interval graphs and an $O(|E|(|E|+|V|))$-time algorithm for circular-arc graphs for the minimum paired dominating set problem~\cite {3}.
-
-Let \{\,f:$N \to $N \,\} be any function. If, given any graph $G=(V,E)$, an algorithm $A$ outputs a paired dominating set of $G$ whose size is at most $f(|V|)$ times the minimum, then $A$ is said to be $f(|V|)$-approximate for the minimum paired dominating set problem. 
 \section{Pseudocode}
+
+%Below is a modification of
+We modify
+the
+famous greedy algorithm for the set-covering problem
+to give the following algorithm, called ALG, for
+the minimum paired-dominating set problem.
+
 \begin{algorithmic}[1]
 %\STATE $U\leftarrow V$;
 \STATE ${\cal D}\leftarrow \emptyset$;
@@ -87,10 +87,6 @@ To be written.
 \end{proof}
 
 
-
-
-\bibliographystyle{plain}
-\bibliography{Introduction}
 
 
 
