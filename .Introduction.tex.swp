@@ -5,6 +5,7 @@
 \usepackage{amsthm}
 \usepackage{algorithmic}
 \usepackage{enumerate}
+\usepackage{float}[1]
 
 
 
@@ -24,36 +25,32 @@
 A graph is an ordered pair $G=(V,E)$ consisting of a finite nonempty set $V$ of vertices and a set $E$ of edges, where each edge is an unordered pair of vertices. A dominating set of $G=(V,E)$ is a set $D \subseteq V$ such that each vertex not in $D$ has at least one neighbor in $D$. A paired-dominating set is a dominating set whose induced subgraph contains at least one perfect matching~\cite{1}.
 
 Raz and Safra prove that the dominating set problem has no polynomial-time $(c \log|V|)$-approximation algorithms for some $c \textgreater  0$ unless $\text{P}=\text{NP}$~\cite{2}.
-Lin and Tu design an $O(|E|+|V|)$-time algorithm for interval graphs and an $O(|E|(|E|+|V|))$-time algorithm for circular-arc graphs for the minimum paired dominating set problem~\cite {3}.
+Lin and Tu design an $O(|E|+|V|)$-time algorithm for interval graphs and an $O(|E|(|E|+|V|))$-time algorithm for circular-arc graphs for the minimum paired-dominating set problem~\cite {3}.
 
-Let \{\,f:$N \to $N \,\} be any function. If, given any graph $G=(V,E)$, an algorithm $A$ outputs a paired dominating set of $G$ whose size is at most $f(|V|)$ times the minimum, then $A$ is said to be $f(|V|)$-approximate for the minimum paired dominating set problem. 
-\section{Pseudocode}
+Let $f\colon \mathbb{N}\to \mathbb{N}$ be any function. If, given any graph $G=(V,E)$, an algorithm $A$ outputs a paired-dominating set of $G$ whose size is at most $f(|V|)$ times the minimum, then $A$ is said to be $f(|V|)$-approximate for the minimum paired-dominating set problem. 
+\clearpage
+
+\begin{figure}{A greedy algorithm}
 \begin{algorithmic}[1]
-%\STATE $U\leftarrow V$;
 \STATE ${\cal D}\leftarrow \emptyset$;
-%\STATE $Z\leftarrow E$;
 \WHILE{$\bigcup_{v\in {\cal D}}\,N[v]\neq V$}
   \STATE Among the edges in $E$ not having an endpoint in ${\cal D}$, pick
 an edge $(a,b)$
 that maximizes $|(N[a]\cup N[b])\cap (V\setminus \bigcup_{v\in {\cal D}}\,N[v])|$,
 breaking ties arbitrarily;
-%  \STATE $U\leftarrow U\setminus (N[a]\cup N[b])$;
-%  \STATE Remove every edge with an endpoint in $\{a,b\}$ from $Z$;
   \STATE ${\cal D}\leftarrow {\cal D}\cup\{a,b\}$;
 \ENDWHILE
 \RETURN ${\cal D}$;
 \end{algorithmic}
+\end{figure}
 
 \begin{lemma}
 %During each iteration of the loop in lines~2--5 of $A$,
-Whenever line~3 of $A$ is executed,
+Whenever line~3 of $A greedy algorithm$ is executed,The following lemma is a consequence of line 2 of $A greedy algorithm.$
 $$
 \left|V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right|>0.
 $$
 \end{lemma}
-\begin{proof}
-To be written.
-\end{proof}
 
 Let $D^*$ be a smallest dominating set of $G=(V,E)$.
 
@@ -85,7 +82,9 @@ $$
 \begin{proof}
 To be written.
 \end{proof}
-
+\begin{lemma}
+Given any graph $G$, $A greedy algorithm$ outputs a paired-dominating set of $G$.
+\end{lemma}
 
 \bibliographystyle{plain}
 \bibliography{Introduction}
