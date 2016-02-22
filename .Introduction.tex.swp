@@ -8,7 +8,6 @@
 \usepackage{float}[1]
 
 
-
 %Gummi|065|=)
 \title{\textbf{XXXX}}
 %\author{Alexander van der Mey \and 
@@ -44,6 +43,7 @@ breaking ties arbitrarily;
 \end{algorithmic}
 \end{figure}
 
+%lemma 1
 \begin{lemma}
 %During each iteration of the loop in lines~2--5 of $A$,
 Whenever line~3 of $A greedy algorithm$ is executed,The following lemma is a consequence of line 2 of $A greedy algorithm.$
@@ -51,9 +51,9 @@ $$
 \left|V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right|>0.
 $$
 \end{lemma}
-
 Let $D^*$ be a smallest dominating set of $G=(V,E)$.
 
+%lemma 2
 \begin{lemma}
 %During each iteration of the loop in lines~2--5 of $A$,
 Whenever line~3 of $A$ is executed,
@@ -69,10 +69,10 @@ and that $N(u)\not\subseteq {\cal D}$.
 To be written.
 \end{proof}
 
+%lemma 3
 \begin{lemma}
 %During each iteration of the loop in lines~2--5 of $A$,
-Right after each execution of
-line~3 of $A$,
+Right after each execution of line~3 of $A greedy algorithm$, according to Lemma 1, the following equation right is greater than 0, but also on the left, so the $a$ and $b$ after joining $D$, will find that the left side of the equation will begin $Lemma 1$ approaches zero to zero when the time is complete.
 $$
 \left|\left(N[a]\cup N[b]\right)\cap \left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)\right|
 \ge \frac{1}{|D^*|}
@@ -82,6 +82,8 @@ $$
 \begin{proof}
 To be written.
 \end{proof}
+
+%lemma 4
 \begin{lemma}
 Given any graph $G$, $A greedy algorithm$ outputs a paired-dominating set of $G$.
 \end{lemma}
