@@ -9,7 +9,7 @@
 
 
 %Gummi|065|=)
-\title{\textbf{XXXX}}
+\title{\textbf{Finding paired domination set }}
 %\author{Alexander van der Mey \and 
 %		Wei-Ning Huang \and
 %		Dion Timmermann}
@@ -24,13 +24,14 @@
 A graph is an ordered pair $G=(V,E)$ consisting of a finite nonempty set $V$ of vertices and a set $E$ of edges, where each edge is an unordered pair of vertices. A dominating set of $G=(V,E)$ is a set $D \subseteq V$ such that each vertex not in $D$ has at least one neighbor in $D$. A paired-dominating set is a dominating set whose induced subgraph contains at least one perfect matching~\cite{1}.
 
 Raz and Safra prove that the dominating set problem has no polynomial-time $(c \log|V|)$-approximation algorithms for some $c \textgreater  0$ unless $\text{P}=\text{NP}$~\cite{2}.
-Lin and Tu design an $O(|E|+|V|)$-time algorithm for interval graphs and an $O(|E|(|E|+|V|))$-time algorithm for circular-arc graphs for the minimum paired-dominating set problem~\cite {3}.
+Lin and Tu design an $O(|E|+|V|)$-time algorithm for interval graphs and an $O(|E|(|E|+|V|))$-time algorithm for circular-arc graphs, for the minimum paired-dominating set problem~\cite {3}.
 
 Let $f\colon \mathbb{N}\to \mathbb{N}$ be any function. If, given any graph $G=(V,E)$, an algorithm $A$ outputs a paired-dominating set of $G$ whose size is at most $f(|V|)$ times the minimum, then $A$ is said to be $f(|V|)$-approximate for the minimum paired-dominating set problem. 
 \clearpage
 
-\begin{figure}{A greedy algorithm}
+\begin{figure}
 \begin{algorithmic}[1]
+
 \STATE ${\cal D}\leftarrow \emptyset$;
 \WHILE{$\bigcup_{v\in {\cal D}}\,N[v]\neq V$}
   \STATE Among the edges in $E$ not having an endpoint in ${\cal D}$, pick
@@ -41,12 +42,15 @@ breaking ties arbitrarily;
 \ENDWHILE
 \RETURN ${\cal D}$;
 \end{algorithmic}
+\caption{A greedy algorithm}
+\label{abc}
 \end{figure}
 
 %lemma 1
+The following lemma is a consequence of line~2 of \text{the algorithm in Fig. 1}.
 \begin{lemma}
 %During each iteration of the loop in lines~2--5 of $A$,
-Whenever line~3 of $A greedy algorithm$ is executed,The following lemma is a consequence of line 2 of $A greedy algorithm.$
+Whenever line~3 of the algorithm in Fig.~\ref{abc} is executed, 
 $$
 \left|V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right|>0.
 $$
@@ -56,7 +60,7 @@ Let $D^*$ be a smallest dominating set of $G=(V,E)$.
 %lemma 2
 \begin{lemma}
 %During each iteration of the loop in lines~2--5 of $A$,
-Whenever line~3 of $A$ is executed,
+Whenever line~3 of  the algorithm in Fig.~\ref{abc} is executed,
 there exists $u\in D^*\setminus {\cal D}$ satisfying
 $$
 \left|N[u]\cap \left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)\right|
