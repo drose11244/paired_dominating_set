@@ -9,7 +9,7 @@
 
 
 %Gummi|065|=)
-\title{\textbf{Finding paired domination set }}
+\title{\textbf{Finding paired domination sets }}
 %\author{Alexander van der Mey \and 
 %		Wei-Ning Huang \and
 %		Dion Timmermann}
@@ -24,6 +24,7 @@
 A graph is an ordered pair $G=(V,E)$ consisting of a finite nonempty set $V$ of vertices and a set $E$ of edges, where each edge is an unordered pair of vertices. A dominating set of $G=(V,E)$ is a set $D \subseteq V$ such that each vertex not in $D$ has at least one neighbor in $D$. A paired-dominating set is a dominating set whose induced subgraph contains at least one perfect matching~\cite{1}.
 
 Raz and Safra prove that the dominating set problem has no polynomial-time $(c \log|V|)$-approximation algorithms for some $c \textgreater  0$ unless $\text{P}=\text{NP}$~\cite{2}.
+
 Lin and Tu design an $O(|E|+|V|)$-time algorithm for interval graphs and an $O(|E|(|E|+|V|))$-time algorithm for circular-arc graphs, for the minimum paired-dominating set problem~\cite {3}.
 
 Let $f\colon \mathbb{N}\to \mathbb{N}$ be any function. If, given any graph $G=(V,E)$, an algorithm $A$ outputs a paired-dominating set of $G$ whose size is at most $f(|V|)$ times the minimum, then $A$ is said to be $f(|V|)$-approximate for the minimum paired-dominating set problem. 
@@ -60,7 +61,7 @@ Let $D^*$ be a smallest dominating set of $G=(V,E)$.
 %lemma 2
 \begin{lemma}
 %During each iteration of the loop in lines~2--5 of $A$,
-Whenever line~3 of  the algorithm in Fig.~\ref{abc} is executed,
+Whenever line~3 of the algorithm in Fig.~\ref{abc} is executed,
 there exists $u\in D^*\setminus {\cal D}$ satisfying
 $$
 \left|N[u]\cap \left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)\right|
@@ -76,7 +77,8 @@ To be written.
 %lemma 3
 \begin{lemma}
 %During each iteration of the loop in lines~2--5 of $A$,
-Right after each execution of line~3 of $A greedy algorithm$, according to Lemma 1, the following equation right is greater than 0, but also on the left, so the $a$ and $b$ after joining $D$, will find that the left side of the equation will begin $Lemma 1$ approaches zero to zero when the time is complete.
+Right after each execution of line~3 of the algorithm in Fig.~\ref{abc} according to Lemma 1, the following equation right is greater than 0, but also on the left, so the a and b after joining D, will find that the left side of the equation will begin Lemma1 approaches zero to zero when the time is complete.
+
 $$
 \left|\left(N[a]\cup N[b]\right)\cap \left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)\right|
 \ge \frac{1}{|D^*|}
@@ -89,7 +91,7 @@ To be written.
 
 %lemma 4
 \begin{lemma}
-Given any graph $G$, $A greedy algorithm$ outputs a paired-dominating set of $G$.
+Given any graph $G$, the algorithm in Fig.~\ref{abc} outputs a paired-dominating set of $G$.
 \end{lemma}
 
 \bibliographystyle{plain}
