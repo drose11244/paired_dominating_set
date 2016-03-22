@@ -21,7 +21,7 @@
 \newtheorem{lemma}{Lemma}
 
 \section{Introduction}
-A graph is an ordered pair $G=(V,E)$ consisting of a finite nonempty set $V$ of vertices and a set $E$ of edges, where each edge is an unordered pair of vertices. A dominating set of $G=(V,E)$ is a set $D \subseteq V$ such that each vertex not in $D$ has at least one neighbor in $D$. A paired-dominating set is a dominating set whose induced subgraph contains at least one perfect matching~\cite{1}.
+A graph is an ordered pair $G=(V,E)$ consisting of a finite nonempty set $V$ of vertices and a set $E$ of edges, where each edge is an unordered pair of vertices. A dominating set of $G$ is a set $D \subseteq V$ such that each vertex not in $D$ has at least one neighbor in $D$. A paired-dominating set is a dominating set whose induced subgraph contains at least one perfect matching~\cite{1}.
 
 Raz and Safra prove that the dominating set problem has no polynomial-time $(c \log|V|)$-approximation algorithms for some $c \textgreater  0$ unless $\text{P}=\text{NP}$~\cite{2}.
 
@@ -71,7 +71,7 @@ $$
 and that $N(u)\not\subseteq {\cal D}$.
 \end{lemma}
 \begin{proof}
-For $G's$ each vertex $v$, we call $N[v]$, and $D^*$ is dominating set, so the union of $N[v]$ over all $v$ belong $D^*$ equal $V$, therefore $D^*$'s each vertex will union can cover~$\left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)$, and then we can say $D^*$ has some vertex can cover~$\left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)$, at least $\frac{1}{|D^*|}$ proportion.
+$D^*$ is dominating set. So the union of $N[v]$ over all $v$ $\in$ $D^*$ equal $V$. Therefore $D^*$'s each vertex have cover~$\left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)$. And then we can say $D^*$ has some vertex can cover~$\left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)$, at least $\frac{1}{|D^*|}$ proportion.
 
 \end{proof}
 \clearpage
