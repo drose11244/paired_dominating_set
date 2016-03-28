@@ -64,14 +64,14 @@ Let $D^*$ be a smallest dominating set of $G=(V,E)$.
 Whenever line~3 of the algorithm in Fig.~\ref{abc} is executed,
 there exists $u\in D^*\setminus {\cal D}$ satisfying
 $$
-\left|N[u]\cap \left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)\right|
+\left|N[u]\cap \left(V\setminus \bigcup_{v\in {\cal D^*}}\,N[v]\right)\right|
 \ge \frac{1}{|D^*|}
 \cdot\left|V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right|
 $$
 and that $N(u)\not\subseteq {\cal D}$.
 \end{lemma}
 \begin{proof}
-$D^*$ is dominating set. So the union of $N[v]$ over all $v$ $\in$ $D^*$ equal $V$. Therefore $D^*$'s each vertex have cover~$\left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)$. And then we can say $D^*$ has some vertex can cover~$\left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)$, at least $\frac{1}{|D^*|}$ proportion.
+Recall that $D^*$ is dominating set. So the union of $N[v]$ over all $v$ $\in$ $D^*$ equals $V$, which is a superset of $N[v]$ over all $v$ in $D^*$. And then we can say some each $D^*$ can cover~$\left(V\setminus \bigcup_{v\in {\cal D^*}}\,N[v]\right)$, at least proportion of $\frac{1}{|D^*|}$ .
 
 \end{proof}
 \clearpage
