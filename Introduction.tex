@@ -9,7 +9,7 @@
 
 
 %Gummi|065|=)
-\title{\textbf{Finding paired dominating sets }}
+\title{\textbf{Finding paired-dominating sets }}
 %\author{Alexander van der Mey \and 
 %		Wei-Ning Huang \and
 %		Dion Timmermann}
@@ -63,16 +63,19 @@ Let $D^*$ be a smallest dominating set of $G=(V,E)$.
 %During each iteration of the loop in lines~2--5 of $A$,
 Whenever line~3 of the algorithm in Fig.~\ref{abc} is executed,
 there exists $u\in D^*\setminus {\cal D}$ satisfying
-$$
-\left|N[u]\cap \left(V\setminus \bigcup_{v\in {\cal D^*}}\,N[v]\right)\right|
+
+\begin{equation}
+\left|N[u]\cap \left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)\right|
 \ge \frac{1}{|D^*|}
 \cdot\left|V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right|
-$$
+\label{lemma2-equation}
+\end{equation}
+
+
 and that $N(u)\not\subseteq {\cal D}$.
 \end{lemma}
 \begin{proof}
-Recall that $D^*$ is dominating set. And let we call ~$ \left|V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right|$ is $(A)$. So the union of $N[v]$ over all $v$ $\in$ $D^*$ equals $V$, which is a superset of $(A)$. And then we can say some $D^*$ can cover~$\left(V\setminus \bigcup_{v\in {\cal D^*}}\,N[v]\right)$, cover at least a $\frac{1}{|D^*|}$  proportion of .
-
+Recall that $D^*$ is a dominating set. And let us call ~(\ref{lemma2-equation}). So the union of $N[v]$ over all $v$ $\in$ $D^*$ equals $V$, which is a superset of ~(\ref{lemma2-equation}). And then we can say some $u\in D^*$ can cover~$\left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)$ cover at least a $\frac{1}{|D^*|}$  proportion of ~(\ref{lemma2-equation}).
 \end{proof}
 \clearpage
 
@@ -88,7 +91,7 @@ $$
 $$
 \end{lemma}
 \begin{proof}
-According to Lemma~1, the following equation right is greater than 0, but also on the left, so the $a$ and $b$ after joining $D$, will find that the left side of the equation will begin Lemma~1 approaches zero to zero when the time is complete.
+According to Lemma~1, the right-hand side of the following equation is greater than 0. But also on the left, so the $a$ and $b$ after joining $D$. Will find that the left side of the equation. Will begin Lemma~1 approaches zero to zero when the time is complete.
 \end{proof}
 
 %lemma 4
