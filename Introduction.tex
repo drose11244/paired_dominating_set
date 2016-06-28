@@ -43,7 +43,7 @@ breaking ties arbitrarily;
 \ENDWHILE
 \RETURN ${\cal D}$;
 \end{algorithmic}
-\caption{A greedy algorithm}
+\caption{A greedy algorithm for finding paired-dominating sets}
 \label{abc}
 \end{figure}
 
@@ -73,10 +73,8 @@ there exists $u\in D^*\setminus {\cal D}$ satisfying
 and that $N(u)\not\subseteq {\cal D}$.
 \end{lemma}
 \begin{proof}
-Recall that $D^*$ is a dominating set. So the union of $N[v]$ over all $v$ $\in$ $D^*$ equals $V$, which is a superset of $V\setminus \bigcup_{v\in{\cal D}} N[v]$. And then we can say some $u\in D^*$ can~$\left(V \bigcup \right)$ cover at least a $\frac{1}{|D^*|}$  proportion of $V\setminus \bigcup_{v\in{\cal D}} N[v]$. why $u\notin D$ because if $u\in D$.the left-hand side of inequality.
-
-
-
+Recall that $D^*$ is a dominating set. So the union of $N[v]$ over all $v$ $\in$ $D^*$ equals $V$, which is a superset of $V\setminus \bigcup_{v\in{\cal D}} N[v]$. And then we can say some $u\in D^*$ can cover at least a $\frac{1}{|D^*|}$ proportion of $V\setminus \bigcup_{v\in{\cal D}} N[v]$. We have $u\notin {\cal D}$, For otherwise, the left-hand side of inequality $(1)$ vansishes contradicting Lemma 1.
+if $N(u)\subseteq {\cal D}$, and then $N[u]\subseteq \bigcup_{v\in {\cal D}} N[v]$， therefore contribute to $(1)$ left-hand side is 0, and lemma 1 contradiction. 
 
 \end{proof}
 \clearpage
