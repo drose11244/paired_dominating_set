@@ -7,6 +7,7 @@
 \usepackage{enumerate}
 \usepackage{float}[1]
 
+\renewcommand{\qedsymbol}{}
 
 %Gummi|065|=)
 \title{\textbf{Finding paired-dominating sets }}
@@ -48,7 +49,7 @@ breaking ties arbitrarily;
 \end{figure}
 
 %lemma 1
-The following lemma is a consequence of line~2 of \text{the algorithm in Fig.~\ref{abc}}.
+In the sequel, assume without loss of generality that $G$ is connected. The following lemma is a consequence of line~2 of \text{the algorithm in Fig.~\ref{abc}}.
 \begin{lemma}
 %During each iteration of the loop in lines~2--5 of $A$,
 Whenever line~3 of the algorithm in Fig.~\ref{abc} is executed, 
@@ -73,17 +74,15 @@ there exists $u\in D^*\setminus {\cal D}$ satisfying
 and that $N(u)\not\subseteq {\cal D}$.
 \end{lemma}
 \begin{proof}
-Recall that $D^*$ is a dominating set. So the union of $N[v]$ over all $v$ $\in$ $D^*$ equals $V$, which is a superset of $V\setminus \bigcup_{v\in{\cal D}} N[v]$. And then we can say some $u\in D^*$ can cover at least a $\frac{1}{|D^*|}$ proportion of $V\setminus \bigcup_{v\in{\cal D}} N[v]$. We have $u\notin {\cal D}$, For otherwise, the left-hand side of inequality $(1)$ vansishes contradicting Lemma 1.
-if $N(u)\subseteq {\cal D}$, and then $N[u]\subseteq \bigcup_{v\in {\cal D}} N[v]$， therefore contribute to $(1)$ left-hand side is 0, and lemma 1 contradiction. 
-
+Recall that $D^*$ is a dominating set. So the union of $N[v]$ over all $v$ $\in$ $D^*$ equals $V, $ which is a superset of $V\setminus \bigcup_{v\in{\cal D}} N[v]$. And then we can say some $u\in D^*$ can cover at least a $\frac{1}{|D^*|}$ proportion of $V\setminus \bigcup_{v\in{\cal D}} N[v]$. We have $u\notin {\cal D}$ for, otherwise, the left-hand side of inequality $(1)$ vanishes, contradicting Lemma 1. If $N(u)\subseteq {\cal D}$, then $N[u]\subseteq \bigcup_{v\in {\cal D}} N[v]$， and therefore the left-hand side of inequality $(1)$ is 0, a contradiction to Lemma 1.
+\[ \]
 \end{proof}
 \clearpage
 
-%lemma 3
+%lemma 3u/ 
 \begin{lemma}
 %During each iteration of the loop in lines~2--5 of $A$,
 Right after each execution of line~3 of the algorithm in Fig.~\ref{abc},
-
 $$
 \left|\left(N[a]\cup N[b]\right)\cap \left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)\right|
 \ge \frac{1}{|D^*|}
@@ -91,7 +90,7 @@ $$
 $$
 \end{lemma}
 \begin{proof}
-According to Lemma~1, the right-hand side of the following equation is greater than 0. But also on the left, so the $a$ and $b$ after joining $D$. Will find that the left side of the equation. Will begin Lemma~1 approaches zero to zero when the time is complete.
+Let $u\in D^*\setminus {\cal D}$ be as in Lemma~2. Clearly, $u\notin {\cal D}$. Pick any neighbor $u'$ of $u$\underline{}. As $N(u)\not\subseteq {\cal D}$, we may pick a neighbor $u'\notin {\cal D}$ of $u$. Therefore we are likely lemma3 left-hand side. Moreover only change $a$ to $u$ and change $b$ to $u'$. Will find that the left side of the equation. Finally will begin Lemma~1 approaches zero to zero when the time is complete.
 \end{proof}
 
 %lemma 4
