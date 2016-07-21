@@ -7,7 +7,6 @@
 \usepackage{enumerate}
 \usepackage{float}[1]
 
-\renewcommand{\qedsymbol}{}
 
 %Gummi|065|=)
 \title{\textbf{Finding paired-dominating sets }}
@@ -22,7 +21,7 @@
 \newtheorem{lemma}{Lemma}
 
 \section{Introduction}
-A graph is an ordered pair $G=(V,E)$ consisting of a finite nonempty set $V$ of vertices and a set $E$ of edges, where each edge is an unordered pair of vertices. A dominating set of $G$ is a set $D \subseteq V$ such that each vertex not in $D$ has at least one neighbor in $D$. A paired-dominating set is a dominating set whose induced subgraph contains at least one perfect matching Peter J~\cite{1}.
+A graph is an ordered pair $G=(V,E)$ consisting of a finite nonempty set $V$ of vertices and a set $E$ of edges, where each edge is an unordered pair of vertices. A dominating set of $G$ is a set $D \subseteq V$ such that each vertex not in $D$ has at least one neighbor in $D$. A paired-dominating set is a dominating set whose induced subgraph contains at least one perfect matching~\cite{1}.
 
 Raz and Safra prove that the dominating set problem has no polynomial-time $(c \log|V|)$-approximation algorithms for some $c \textgreater  0$ unless $\text{P}=\text{NP}$~\cite{2}.
 
@@ -73,27 +72,46 @@ there exists $u\in D^*\setminus {\cal D}$ satisfying
 \end{equation}
 and that $N(u)\not\subseteq {\cal D}$.
 \end{lemma}
+
 \begin{proof}
-Recall that $D^*$ is a dominating set. So the union of $N[v]$ over all $v$ $\in$ $D^*$ equals $V, $ which is a superset of $V\setminus \bigcup_{v\in{\cal D}} N[v]$. And then we can say some $u\in D^*$ can cover at least a $\frac{1}{|D^*|}$ proportion of $V\setminus \bigcup_{v\in{\cal D}} N[v]$. We have $u\notin {\cal D}$ for, otherwise, the left-hand side of inequality $(1)$ vanishes, contradicting Lemma 1. If $N(u)\subseteq {\cal D}$, then $N[u]\subseteq \bigcup_{v\in {\cal D}} N[v]$， and therefore the left-hand side of inequality $(1)$ is 0, a contradiction to Lemma 1.
-\[ \]
+Recall that $D^*$ is a dominating set. So the union of $N[v]$ over all $v$ $\in$ $D^*$ equals $V, $ which is a superset of $V\setminus \bigcup_{v\in{\cal D}} N[v]$. Therefore, there exists $u\in D^*$ such that $N[u]$ covers at least a $\frac{1}{|D^*|}$ proportion of $V\setminus \bigcup_{v\in{\cal D}} N[v]$, implying inequality $(1)$. We have $u\notin {\cal D}$ for, otherwise, the left-hand side of inequality $(1)$ vanishes, contradicting Lemma 1.
 \end{proof}
+If $N(u)\subseteq {\cal D}$,  then $N[u]\subseteq \bigcup_{v\in {\cal D}} N[v]$， and therefore the left-hand side of inequality $(1)$ is 0, a contradiction to Lemma 1.
+
+
 \clearpage
 
-%lemma 3u/ 
+%lemma 3
 \begin{lemma}
 %During each iteration of the loop in lines~2--5 of $A$,
 Right after each execution of line~3 of the algorithm in Fig.~\ref{abc},
-$$
+\begin{equation}
 \left|\left(N[a]\cup N[b]\right)\cap \left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)\right|
 \ge \frac{1}{|D^*|}
 \cdot\left|V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right|.
-$$
+\end{equation}
+\begin{equation}
+\left|V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right|
+\end{equation}
 \end{lemma}
 \begin{proof}
-Let $u\in D^*\setminus {\cal D}$ be as in Lemma~2. Clearly, $u\notin {\cal D}$. Pick any neighbor $u'$ of $u$\underline{}. As $N(u)\not\subseteq {\cal D}$, we may pick a neighbor $u'\notin {\cal D}$ of $u$. Therefore we are likely lemma3 left-hand side. Moreover only change $a$ to $u$ and change $b$ to $u'$. Will find that the left side of the equation. Finally will begin Lemma~1 approaches zero to zero when the time is complete.
+Let $u\in D^*\setminus {\cal D}$ be as in Lemma~2. As $N(u)\not\subseteq {\cal D}$, we may pick a neighbor $u'\notin {\cal D}$ of $u$. By Lemma 2, 
+$$
+\left|\left(N[u]\cup N[u']\right)\cap \left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)\right|
+\ge \frac{1}{|D^*|}
+\cdot\left|V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right|.
+$$
+likely lemma3 left-hand side. Moreover only change $a$ to $u$ and change $b$ to $u'$. Will find that the left side of the equation. Finally will begin Lemma~1 approaches zero to zero when the time is complete.
 \end{proof}
-
+%說一下上面這個式子和演算法第三行合起來，就可以得到(A)式喔
 %lemma 4
+\begin{lemma}
+%這裡加一個lemma說一下，每次執行第四行都會使(B)變成原來的1-1/|D^*|倍以內
+
+\end{lemma}
+
+
+%lemma 5
 \begin{lemma}
 Given any graph $G$, the algorithm in Fig.~\ref{abc} outputs a paired-dominating set of $G$.
 \end{lemma}
