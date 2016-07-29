@@ -75,8 +75,9 @@ and that $N(u)\not\subseteq {\cal D}$.
 
 \begin{proof}
 Recall that $D^*$ is a dominating set. So the union of $N[v]$ over all $v$ $\in$ $D^*$ equals $V, $ which is a superset of $V\setminus \bigcup_{v\in{\cal D}} N[v]$. Therefore, there exists $u\in D^*$ such that $N[u]$ covers at least a $\frac{1}{|D^*|}$ proportion of $V\setminus \bigcup_{v\in{\cal D}} N[v]$, implying inequality $(1)$. We have $u\notin {\cal D}$ for, otherwise, the left-hand side of inequality $(1)$ vanishes, contradicting Lemma 1.
-\end{proof}
 If $N(u)\subseteq {\cal D}$,  then $N[u]\subseteq \bigcup_{v\in {\cal D}} N[v]$， and therefore the left-hand side of inequality $(1)$ is 0, a contradiction to Lemma 1.
+\end{proof}
+
 
 
 \clearpage
@@ -90,9 +91,6 @@ Right after each execution of line~3 of the algorithm in Fig.~\ref{abc},
 \ge \frac{1}{|D^*|}
 \cdot\left|V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right|.
 \end{equation}
-\begin{equation}
-\left|V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right|
-\end{equation}
 \end{lemma}
 \begin{proof}
 Let $u\in D^*\setminus {\cal D}$ be as in Lemma~2. As $N(u)\not\subseteq {\cal D}$, we may pick a neighbor $u'\notin {\cal D}$ of $u$. By Lemma 2,
@@ -102,8 +100,11 @@ Let $u\in D^*\setminus {\cal D}$ be as in Lemma~2. As $N(u)\not\subseteq {\cal D
 \ge \frac{1}{|D^*|}
 \cdot\left|V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right|.
 \end{equation}
-The combination of Line3 of the algorithm in Fig.~\ref{abc} and (4) from the (1).
-likely lemma3 left-hand side. Moreover only change $a$ to $u$ and change $b$ to $u'$. Will find that the left side of the equation. Finally will begin Lemma~1 approaches zero to zero when the time is complete.
+By line 3 of the algorithm in Fig. 1, 
+$$
+\left|\left(N[a]\cup N[b]\right)\cap \left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)\right| \geq \left|\left(N[u]\cup N[u']\right)\cap \left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)\right|.
+$$
+Will find that the left side of the equation. Finally will begin Lemma~1 approaches zero to zero when the time is complete.
 \end{proof}
 %說一下上面這個式子和演算法第三行合起來，就可以得到(A)式喔
 %lemma 4
