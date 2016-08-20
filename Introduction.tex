@@ -74,7 +74,7 @@ and that $N(u)\not\subseteq {\cal D}$.
 \end{lemma}
 
 \begin{proof}
-Recall that $D^*$ is a dominating set. So the union of $N[v]$ over all $v$ $\in$ $D^*$ equals $V, $ which is a superset of $V\setminus \bigcup_{v\in{\cal D}} N[v]$. Therefore, there exists $u\in D^*$ such that $N[u]$ covers at least a $\frac{1}{|D^*|}$ proportion of $V\setminus \bigcup_{v\in{\cal D}} N[v]$, implying inequality $(1)$. We have $u\notin {\cal D}$ for, otherwise, the left-hand side of inequality $(1)$ vanishes, contradicting Lemma 1.
+Recall that $D^*$ is a dominating set. So the union of $N[v]$ over all $v$ $\in$ $D^*$ equals $V, $ which is a superset of $V\setminus \bigcup_{v\in{\cal D}} N[v]$. Therefore, there exists $u\in D^*$ such that $N[u]$ covers at least a ${1}/{|D^*|}$ proportion of $V\setminus \bigcup_{v\in{\cal D}} N[v]$, implying inequality $(1)$. We have $u\notin {\cal D}$ for, otherwise, the left-hand side of inequality $(1)$ vanishes, contradicting Lemma 1.
 If $N(u)\subseteq {\cal D}$,  then $N[u]\subseteq \bigcup_{v\in {\cal D}} N[v]$， and therefore the left-hand side of inequality $(1)$ is 0, a contradiction to Lemma 1.
 \end{proof}
 
@@ -100,8 +100,7 @@ Let $u\in D^*\setminus {\cal D}$ be as in Lemma~2. As $N(u)\not\subseteq {\cal D
 \ge \frac{1}{|D^*|}
 \cdot\left|V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right|.
 \end{equation}
-By line 3 of the algorithm in Fig. 1, $u \not\subset D$, $u'\not\subset D$ and $(u,u')\subset E.$
-%也許再說一下還用到u不屬於D、u'不屬於D和(u, u')屬於E這三件事情～
+By line 3 of the algorithm in Fig. 1, $u \notin D$, $u'\notin D$ and $(u,u')\subset E, $
 \begin{equation}
 \left|\left(N[a]\cup N[b]\right)\cap \left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)\right| \geq \left|\left(N[u]\cup N[u']\right)\cap \left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)\right|.
 \end{equation}
@@ -116,19 +115,13 @@ $$
 \cdot\left|V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right|
 $$
 will become within $1-1/|D^*|$.
-%應該是(2)式的右邊的一部份吧，就直接把那個東西寫出來喔～～～^_^
 
 \end{lemma}
 
-
-%lemma 5
-%也來證一下Lemma 5囉，首先先證明Fig.~1的演算法會輸出dominating set，這原因是while的終止條件可以被理解為「只要D還不是dominating set，就繼續做」。接著說明為何演算法結束時的D會是paired dominating set，這部份要觀察兩點：
-%（一）每次第3至4行一定是把一個邊的兩端點加入D、
-%（二）任一次執行第3行所挑選的兩點未來皆不可能再被第三行挑選。以上兩件事是否皆成立，可能需要用力冥想一下
 \begin{lemma}
 Given any graph $G$, the algorithm in Fig.~\ref{abc} outputs a paired-dominating set of $G$.
-if line-2 of the algorithm in Fig.~\ref{abc} is terminated，therefore knew $D$ doesn't had dominating set.
-whenever line-3 to line-4 of the algorithm in Fig.~\ref{abc} is executed, necessary one $E$ combine $D$ with two $V$. Anyone line-3 can't repeat chose same $V$.
+If line-2 of the algorithm in Fig.~\ref{abc} is terminated，therefore knew $D$ doesn't had dominating set.
+Whenever line-3 to line-4 of the algorithm in Fig.~\ref{abc} is executed, necessary one $E$ combine $D$ with two $V$. Anyone line-3 can't repeat chose same $V$.
 
 
 \end{lemma}
