@@ -1,0 +1,208 @@
+%\documentclass[pdf,nocolorBG,slideColor,blends]{prosper}
+\documentclass{beamer}
+%\usepackage{graphicx}
+\usepackage{beamerthemesplit}
+%\usepackage{beamerthemeepa}
+%\usepackage{xcolor}
+%\usepackage{natbib}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{algorithmic}
+%\usepackage{amsthm, amssymb, amsmath}
+
+
+% for themes, etc.
+\mode<presentation>
+%{  \setbeamertemplate{background canvas}[vertical
+%shading][bottom=red!10,top=blue!10]
+%   \usetheme{Warsaw}
+%   \usefonttheme[onlysmall]{structurebold}
+%}
+
+\renewcommand{\thefootnote}{\alph{footnote}}
+
+\setbeamertemplate{footline}[page number]{}
+\setbeamertemplate{navigation symbols}{}
+
+%\usepackage{times}  % fonts are up to you
+%\usepackage{graphicx}
+%\usepackage{subfigure}
+%\definecolor{blue2}{cmyk}{.94,.11,0,0}
+% these will be used later in the title page
+
+\newcommand{\comment}[1]{}
+
+\usepackage{graphicx}
+\begin{document}
+\title{Finding paired-dominating sets}
+\author{Yu-Sen Kao\\
+\ \\
+Joint work with Ching-Lueh Chang \\
+\ \\
+Yuan Ze University }
+
+
+\date{2016/7/3}
+
+%\maketitle
+\setcounter{footnote}{0}
+\begin{frame}
+\titlepage
+\end{frame}
+
+%\section[Outline]{}
+
+%\setcounter{footnote}{0}
+%\begin{frame}\frametitle{Outline}
+%\tableofcontents
+%\end{frame}
+
+%\section{Motivations}
+%\section{The model}
+
+%page 2 Defintions
+\setcounter{footnote}{0}
+\begin{frame}\frametitle{Definitions}
+\begin{itemize}
+\item  A dominating set of $G=(V, E)$ is a set $D \subseteq V$ such that each vertex not in $D$ has at least one neighbor in $D$. 
+\item  A paired-dominating set is a dominating set whose induced subgraph contains at least one perfect matching. 
+\end{itemize}
+\end{frame}
+
+%page 3 Related works
+\setcounter{footnote}{0}
+\begin{frame}\frametitle{Related works}
+\begin{itemize}
+\item  Haynes and Slater (1998) prove the NP-completeness of the minimum paired-dominating set problem. 
+\item  Lin and Tu (2015) design an $O(|E|+|V|)$-time algorithm for interval graphs and an $O(|E|(|E|+|V|))$-time algorithm for circular-arc graphs. 
+\end{itemize}
+\end{frame}
+
+%page 4 pseudocode
+\begin{frame}\frametitle{Pseudocode}
+%pseudo code has some problem.
+\begin{algorithmic}[1]
+\STATE ${\cal D}\leftarrow \emptyset$;
+\WHILE{$\bigcup_{v\in {\cal D}}\,N[v]\neq V$}
+  \STATE Among the edges in $E$ not having an endpoint in ${\cal D}$, pick
+an edge $(a,b)$
+that maximizes $|(N[a]\cup N[b])\cap (V\setminus \bigcup_{v\in {\cal D}}\,N[v])|$,
+breaking ties arbitrarily;
+  \STATE ${\cal D}\leftarrow {\cal D}\cup\{a,b\}$;
+\ENDWHILE
+\RETURN ${\cal D}$;\\
+\ \\
+Our algorithm is a modification of the famous approximation algorithm for set covering.
+\end{algorithmic}
+\end{frame}
+
+%page 5 analysis-lemma 2
+\setcounter{footnote}{0}
+\begin{frame}\frametitle{Analysis}
+\begin{lemma}
+\ \\ 
+Let $D^*$ be a dominating set of $G$.  Whenever line~3 of our algorithm is executed,  there exists $u$ $\in D^*\setminus {\cal D}$ such that   
+%During each iteration of the loop in lines~2--5 of $A$,
+\begin{eqnarray}
+\left|N[u]\cap \left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)\right|
+\ge \frac{1}{|D^*|}
+\cdot\left|V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right|
+\label{thekeyinequality}
+\end{eqnarray}
+and that $N(u)\not\subseteq {\cal D}$.
+\end{lemma}
+\begin{proof}
+%Clearly,
+As $D^*$ is a dominating set,
+{\footnotesize
+$$
+V\setminus \bigcup_{v\in {\cal D}}\,N[v]
+\subseteq
+\bigcup_{v\in D^*}\, N[v].$$
+}
+So by the averaging argument, there exists
+$u\in D^*$ satisfying inequality~(\ref{thekeyinequality}).
+%It is not hard to verify that
+We have
+$u\notin {\cal D}$ and $N(u)\not\subseteq {\cal D}$
+for, otherwise, the left-hand side of inequality~(\ref{thekeyinequality})
+would vanish.
+\end{proof}
+\end{frame}
+
+%page 6 analysis-lemma 3-1
+\setcounter{footnote}{0}
+\begin{frame}\frametitle{Analysis}
+\begin{corollary}
+Right after each execution of line~3 of our algorithm,
+\label{thekeycorollary}
+%During each iteration of the loop in lines~2--5 of $A$,
+$$
+\left|\left(N[a]\cup N[b]\right)\cap \left(V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right)\right|
+\ge \frac{1}{|D^*|}
+\cdot\left|V\setminus \bigcup_{v\in {\cal D}}\,N[v]\right|.
+$$
+\end{corollary}
+%By elementary calculus, $(1-1/n)^n<1/e$ for all $n\in\mathbb{Z}^+$.
+%Repeatedly invoking Corollary~\ref{thekeycorollary},
+%and line~4 of the algorithm in Fig.~\ref{abc},
+After $|D^*|\cdot\lceil\log|V|\rceil$ iterations,
+$$
+\left|\,
+V\setminus \bigcup_{v\in {\cal D}}\,N[v]
+\,\right|
+\leq\left(1-\frac{1}{|D^*|}\right)^{|D^*|\cdot\lceil\log|V|\rceil}
+|V|<1
+$$
+by repeatedly invoking the above
+%corollary~\ref{thekeycorollary},
+corollary,
+implying
+$$
+\left|\, V\setminus \bigcup_{v\in {\cal D}}\,N[v] \,\right|=0.
+$$
+\end{frame}
+%page 7 analysis-lemma 3-2
+\setcounter{footnote}{0}
+\begin{frame}\frametitle{}
+\begin{center}
+When the algorithm halts,
+$|{\cal D}|$ is simply twice the number of iterations.
+As a result, the algorithm outputs
+a set ${\cal D}$ of
+size at most $2\cdot|D^*|\cdot\lceil\log|V|\rceil$.
+	
+
+\end{center}
+\end{frame}
+
+%page 8 main result
+\setcounter{footnote}{0}
+\begin{frame}\frametitle{Main result}
+\begin{theorem}
+The minimum paired-dominating set problem
+has a polynomial-time
+$(2\cdot\lceil\log|V|\rceil)$-approximation algorithm.
+\end{theorem}
+\end{frame}
+
+
+\setcounter{footnote}{0}
+\begin{frame}\frametitle{}
+\begin{center}
+{\large Thank you!}
+\end{center}
+\end{frame}
+
+
+%\bibliographystyle{alpha}
+%\bibliography{presentation_proposal}
+
+\end{document}
+
+
+
+
+
+
